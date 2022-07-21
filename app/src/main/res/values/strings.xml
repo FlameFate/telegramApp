@@ -4,4 +4,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="settings_default_username">Egor Androsov</string>
     <string name="settings_default_status">В сети</string>
+    <string name="Settings_text_account">Аккаунт</string>
+    <string name="settings_default_number">+79111111111</string>
+    <string name="DefaultLogin">Egor Androsov</string>
+    <string name="change_login">Нажмите, чтобы изменить логин</string>
+    <string name="change_number">Нажмите, чтобы изменить номер телефона</string>
+    <string name="default_bio">О себе</string>
+    <string name="settings_label_bio">Нажмите немного о себе</string>
 </resources>
