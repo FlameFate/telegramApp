@@ -2,14 +2,18 @@ package com.example.telegramapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.example.telegramapp.databinding.ActivityMainBinding
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
+import com.mikepenz.materialdrawer.model.DividerDrawerItem
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
+import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,29 +37,82 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         mToolbar = mBinding.mainToolbar
     }
-    private fun initFunc(){
+
+    private fun initFunc() {
         setSupportActionBar(mToolbar)
         createHeader()
         createDrawer()
     }
 
     private fun createDrawer() {
-        mDrawer =  DrawerBuilder()
+        mDrawer = DrawerBuilder()
             .withActivity(this)
             .withToolbar(mToolbar)
             .withActionBarDrawerToggle(true)
             .withSelectedItem(-1)
             .withAccountHeader(mHeader)
             .addDrawerItems(
-                PrimaryDrawerItem().withIdentifier(100)
+                PrimaryDrawerItem().withIdentifier(101)
                     .withIconTintingEnabled(true)
                     .withName("Создать группу")
                     .withSelectable(false)
-            ).build()
+                    .withIcon(R.drawable.image),
+                PrimaryDrawerItem().withIdentifier(102)
+                    .withIconTintingEnabled(true)
+                    .withName("Создать секретный чат")
+                    .withSelectable(false)
+                    .withIcon(R.drawable.image),
+                PrimaryDrawerItem().withIdentifier(103)
+                    .withIconTintingEnabled(true)
+                    .withName("Создать канал")
+                    .withSelectable(false)
+                    .withIcon(R.drawable.image),
+                PrimaryDrawerItem().withIdentifier(104)
+                    .withIconTintingEnabled(true)
+                    .withName("Контакты")
+                    .withSelectable(false)
+                    .withIcon(R.drawable.image),
+                PrimaryDrawerItem().withIdentifier(105)
+                    .withIconTintingEnabled(true)
+                    .withName("Звонки")
+                    .withSelectable(false)
+                    .withIcon(R.drawable.image),
+                PrimaryDrawerItem().withIdentifier(106)
+                    .withIconTintingEnabled(true)
+                    .withName("Избранное")
+                    .withSelectable(false)
+                    .withIcon(R.drawable.image),
+                PrimaryDrawerItem().withIdentifier(107)
+                    .withIconTintingEnabled(true)
+                    .withName("Настройки")
+                    .withSelectable(false)
+                    .withIcon(R.drawable.image),
+                DividerDrawerItem(),
+                PrimaryDrawerItem().withIdentifier(108)
+                    .withIconTintingEnabled(true)
+                    .withName("Пригласить друзей")
+                    .withSelectable(false)
+                    .withIcon(R.drawable.image),
+                PrimaryDrawerItem().withIdentifier(109)
+                    .withIconTintingEnabled(true)
+                    .withName("Вопросы о ATelegram")
+                    .withSelectable(false)
+                    .withIcon(R.drawable.image)
+            ).withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener{
+                override fun onItemClick(
+                    view: View?,
+                    position: Int,
+                    drawerItem: IDrawerItem<*>
+                ): Boolean {
+                    Toast.makeText(applicationContext, position.toString(),Toast.LENGTH_SHORT).show()
+                    return false
+                }
+
+            }).build()
     }
 
-    private fun createHeader(){
-        mHeader=AccountHeaderBuilder()
+    private fun createHeader() {
+        mHeader = AccountHeaderBuilder()
             .withActivity(this)
             .withHeaderBackground(R.drawable.header)
             .addProfiles(
