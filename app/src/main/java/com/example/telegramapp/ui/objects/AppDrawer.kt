@@ -4,8 +4,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.telegramapp.R
-import com.example.telegramapp.ui.ChatFragment
-import com.example.telegramapp.ui.SettingsFragment
+import com.example.telegramapp.ui.fragments.ChatFragment
+import com.example.telegramapp.ui.fragments.SettingsFragment
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
 import com.mikepenz.materialdrawer.Drawer
@@ -15,14 +15,15 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 
-class AppDrawer (var MainActivity:AppCompatActivity, var toolbar: Toolbar){
+class AppDrawer(var MainActivity: AppCompatActivity, var toolbar: Toolbar) {
     private lateinit var mDrawer: Drawer
     private lateinit var mHeader: AccountHeader
 
-    fun Create(){
+    fun Create() {
         createHeader()
         createDrawer()
     }
+
     private fun createDrawer() {
         mDrawer = DrawerBuilder()
             .withActivity(MainActivity)
@@ -77,13 +78,13 @@ class AppDrawer (var MainActivity:AppCompatActivity, var toolbar: Toolbar){
                     .withName("Вопросы о ATelegram")
                     .withSelectable(false)
                     .withIcon(R.drawable.image)
-            ).withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener{
+            ).withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
                 override fun onItemClick(
                     view: View?,
                     position: Int,
                     drawerItem: IDrawerItem<*>
                 ): Boolean {
-                    when (position){
+                    when (position) {
                         7 -> MainActivity.supportFragmentManager.beginTransaction()
                             .addToBackStack(null)
                             .replace(R.id.dataContainer, SettingsFragment()).commit()

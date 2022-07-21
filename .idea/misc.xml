@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/telegramApp/app/src/main/res/drawable/header.xml" value="0.2985" />
         <entry key="..\:/telegramApp/app/src/main/res/layout/activity_main.xml" value="0.29270833333333335" />
+        <entry key="..\:/telegramApp/app/src/main/res/layout/fragment_base.xml" value="0.28489583333333335" />
         <entry key="..\:/telegramApp/app/src/main/res/layout/fragment_chat.xml" value="0.28489583333333335" />
         <entry key="..\:/telegramApp/app/src/main/res/layout/fragment_settings.xml" value="0.28489583333333335" />
       </map>
