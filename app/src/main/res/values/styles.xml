@@ -42,4 +42,9 @@
         <item name="android:background">@color/primary</item>
 
     </style>
+
+    <style name="ActionMenu" parent="Theme.AppCompat.Light">
+        <item name="background">@color/white</item>
+        <item name="actionMenuTextColor">@color/black</item>
+    </style>
 </resources>

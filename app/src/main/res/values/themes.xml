@@ -2,6 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.TelegramApp" parent="MaterialDrawerTheme">
         <!-- Primary brand color. -->
+        <item name="popupTheme">@style/ActionMenu</item>
         <item name="colorPrimary">@color/blue</item>
         <item name="colorPrimaryVariant">@color/darkblue</item>
         <item name="colorOnPrimary">@color/white</item>
