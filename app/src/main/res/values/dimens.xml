@@ -13,5 +13,6 @@
     <dimen name="settings_userphotoheightsmall">45dp</dimen>
     <dimen name="settings_border_width">2dp</dimen>
     <dimen name="android_ripple_effect_drawable">4dp</dimen>
+    <dimen name="apppadding">5dp</dimen>
 
 </resources>
